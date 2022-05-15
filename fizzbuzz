@@ -1,0 +1,40 @@
+#include <iostream>
+
+using namespace std;
+
+void FizBuzz(int n7,int n11,int maxnumber)
+{
+    if ((n7 <= maxnumber-7) || (n11 <= maxnumber-11))
+    {
+        if ((n7 + 7) < (n11 + 11))
+        {
+            cout << n7 + 7 << " ";
+            cout << n7 <<" "<<n11 <<"\n";
+            FizBuzz(n7 + 7, n11,maxnumber);
+        }
+        else
+        {
+            if ((n7 + 7) > (n11 + 11))
+            {
+                cout << n11 + 11 << " ";
+                cout << n7 << " " << n11 << "\n";
+                FizBuzz(n7, n11 + 11, maxnumber);
+            }
+            else
+            {
+                cout << n11 + 11 << " ";
+                cout << n7 << " " << n11 << "\n";
+                FizBuzz(n7 + 7, n11 + 11, maxnumber);
+            }
+        }
+    }
+}
+
+int main()
+{
+    int maxnumber = 0;
+    cout <<"Enter the maximum number to reach ";
+    cin >> maxnumber;
+    cout << "\n";
+    FizBuzz(0, 0,maxnumber);
+}
